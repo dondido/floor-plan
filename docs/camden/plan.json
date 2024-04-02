@@ -1,0 +1,84 @@
+{
+    "name": "The Camden",
+    "src": "floors/brambleton.svg",
+    "footRatio": "9",
+    "zoomRatio": "100",
+    "floors": [
+        {
+            "name": "GROUND FLOOR",
+            "id": "GFP",
+            "options": [
+                {
+                    "name": "Elevation #2",
+                    "id": "GFP"
+                }
+            ]
+        },
+        {
+            "name": "2ND FLOOR",
+            "id": "SFP",
+            "options": [
+                {
+                    "name": "End Condition",
+                    "id": "SFPEC"
+                },
+                {
+                    "name": "Opt. Bay",
+                    "id": "SFPOB"
+                },
+                {
+                    "name": "Opt. Deck",
+                    "id": "SFPOD"
+                },
+                {
+                    "name": "Elevation #2",
+                    "id": "SFPE2"
+                },
+                {
+                    "name": "Elevation #3",
+                    "id": "SFPE3"
+                },
+                {
+                    "name": "Elevation #4",
+                    "id": "SFPE4"
+                }
+            ]
+        },
+        {
+            "name": "3RD FLOOR",
+            "id": "TFP",
+            "options": [
+                {
+                    "name": "End Condition",
+                    "id": "TFPEC",
+                    "disable": []
+                },
+                {
+                    "name": "Opt. Bay",
+                    "id": "TFPOB",
+                    "disable": []
+                },
+                {
+                    "name": "Elevation #2",
+                    "id": "TFPE2",
+                    "disable": []
+                },
+                {
+                    "name": "Elevation #3",
+                    "id": "TFPE3",
+                    "disable": []
+                }
+            ]
+        },
+        {
+            "name": "LOFT",
+            "id": "LFP",
+            "options": [
+                {
+                    "name": "End Condition",
+                    "id": "LFPEC"
+                }
+            ]
+        }
+    ]
+}

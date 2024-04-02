@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Floorplan</title>
+    <meta id="metaViewport" name="viewport" content="width=device-width, initial-scale = 1.0, user-scalable = no, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Floorplan Demo">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" media="screen and (max-width: 1024px)" href="css/tablet.css">
+    <link rel="stylesheet" href="css/print.css" media="print" />
+    <link rel="preload" href="/fonts/khula-regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="/fonts/khula-light.ttf" as="font" type="font/ttf" crossorigin>
+</head>
+<body>
+    <main class="main">
+        <header class="header">
+            <h1 class="plan-name"></h1>
+            <button type="button" class="print-button">Print</button>
+        </header>
+        <input id="reverse" type="checkbox"/>
+        <input id="measure" type="checkbox"/>
+        <div class="port" data-drag-area>
+            <div class="view draggable pinchable"></div>
+        </div>
+        <input id="interface" type="checkbox"/>
+        <ul class="floor-selector"></ul>
+        <div class="right-menu">
+            <ul class="toolbar" role="toolbar" aria-label="Toolbar">
+                <li><label class="hide-interface-button" for="interface" title="Toggle Interface"></label></li>
+                <li><label class="mirror-button" for="reverse" title="Flip Floorplan"></label></li>
+                <li><label class="ruler-button" for="measure" title="Measure Tool"></label></li>
+                <li><button class="text-button" title="Text Tool"></button></li>
+                <li><button class="reset-button" title="Reset All Changes"></button></li>
+            </ul>
+            <div class="zoom-control" data-z="100">
+                <div class="zoom-range">
+                    <input type="range" min="0" max="100" value="0" class="zoom-slider">
+                </div>
+            </div>
+        </div>
+        <div class="ruler">
+            <div class="gauge"></div>
+            <div class="foots"></div>
+        </div>
+    </main>
+    <div class="mirror"></div>
+    <script src="js/utils.js" defer type="module"></script>
+    <script src="js/gestures.js" defer type="module"></script>
+    <script src="js/index.js" defer type="module"></script>
+    <script src="js/media-query.js" defer  type="module"></script>
+</body>
+</html>
