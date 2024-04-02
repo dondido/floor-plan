@@ -6,13 +6,7 @@
     "floors": [
         {
             "name": "GROUND FLOOR",
-            "id": "GFP",
-            "options": [
-                {
-                    "name": "Elevation #2",
-                    "id": "GFP"
-                }
-            ]
+            "id": "GFP"
         },
         {
             "name": "2ND FLOOR",
@@ -20,27 +14,49 @@
             "options": [
                 {
                     "name": "End Condition",
-                    "id": "SFPEC"
+                    "id": "SFPEC",
+                    "disable": ["SFPOB"]
                 },
                 {
                     "name": "Opt. Bay",
-                    "id": "SFPOB"
+                    "id": "SFPOB",
+                    "disable": ["SFPEC", "SFPOD", "SFPE2", "SFPE3", "SFPE4"]
                 },
                 {
                     "name": "Opt. Deck",
-                    "id": "SFPOD"
+                    "id": "SFPOD",
+                    "disable": ["SFPOB", "SFPEC", "SFPE2", "SFPE3", "SFPE4"]
                 },
                 {
                     "name": "Elevation #2",
-                    "id": "SFPE2"
+                    "id": "SFPE2",
+                    "disable": ["SFPOB", "SFPEC", "SFPOD", "SFPE3", "SFPE4"]
                 },
                 {
                     "name": "Elevation #3",
-                    "id": "SFPE3"
+                    "id": "SFPE3",
+                    "disable": ["SFPOB", "SFPEC", "SFPOD", "SFPE2", "SFPE4"]
                 },
                 {
                     "name": "Elevation #4",
-                    "id": "SFPE4"
+                    "id": "SFPE4",
+                    "disable": ["SFPOB", "SFPEC", "SFPOD", "SFPE2", "SFPE3"]
+                }
+            ]
+        },
+        {
+            "name": "Alt. 2ND FLOOR",
+            "id": "ASFP",
+            "options": [
+                {
+                    "name": "End Condition",
+                    "id": "ASFPEC",
+                    "disable": ["ASFPOD"]
+                },
+                {
+                    "name": "Opt. Deck",
+                    "id": "ASFPOD",
+                    "disable": ["ASFPEC"]
                 }
             ]
         },
@@ -51,22 +67,22 @@
                 {
                     "name": "End Condition",
                     "id": "TFPEC",
-                    "disable": []
+                    "disable": ["TFPOB", "TFPE2", "TFPE3"]
                 },
                 {
                     "name": "Opt. Bay",
                     "id": "TFPOB",
-                    "disable": []
+                    "disable": ["TFPEC", "TFPE2", "TFPE3"]
                 },
                 {
                     "name": "Elevation #2",
                     "id": "TFPE2",
-                    "disable": []
+                    "disable": ["TFPEC", "TFPOB", "TFPE3"]
                 },
                 {
                     "name": "Elevation #3",
                     "id": "TFPE3",
-                    "disable": []
+                    "disable": ["TFPEC", "TFPOB", "TFPE2"]
                 }
             ]
         },
