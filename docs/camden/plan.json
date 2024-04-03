@@ -15,32 +15,31 @@
                 {
                     "name": "End Condition",
                     "id": "SFPEC",
-                    "disable": ["SFPOB"]
+                    "disable": ["SFPE4"]
                 },
                 {
                     "name": "Opt. Bay",
                     "id": "SFPOB",
-                    "disable": ["SFPEC", "SFPOD", "SFPE2", "SFPE3", "SFPE4"]
+                    "required": ["SFPEC"]
                 },
                 {
                     "name": "Opt. Deck",
-                    "id": "SFPOD",
-                    "disable": ["SFPOB", "SFPEC", "SFPE2", "SFPE3", "SFPE4"]
+                    "id": "SFPOD"
                 },
                 {
                     "name": "Elevation #2",
                     "id": "SFPE2",
-                    "disable": ["SFPOB", "SFPEC", "SFPOD", "SFPE3", "SFPE4"]
+                    "disable": ["SFPE3", "SFPE4"]
                 },
                 {
                     "name": "Elevation #3",
                     "id": "SFPE3",
-                    "disable": ["SFPOB", "SFPEC", "SFPOD", "SFPE2", "SFPE4"]
+                    "disable": ["SFPE2", "SFPE4"]
                 },
                 {
                     "name": "Elevation #4",
                     "id": "SFPE4",
-                    "disable": ["SFPOB", "SFPEC", "SFPOD", "SFPE2", "SFPE3"]
+                    "disable": ["SFPEC", "SFPE2", "SFPE3"]
                 }
             ]
         },
@@ -57,6 +56,21 @@
                     "name": "Opt. Deck",
                     "id": "ASFPOD",
                     "disable": ["ASFPEC"]
+                },
+                {
+                    "name": "Elevation #2",
+                    "id": "ASFPE2",
+                    "disable": ["ASFPE3", "ASFPE4"]
+                },
+                {
+                    "name": "Elevation #3",
+                    "id": "ASFPE3",
+                    "disable": ["ASFPE2", "ASFPE4"]
+                },
+                {
+                    "name": "Elevation #4",
+                    "id": "ASFPE4",
+                    "disable": ["ASFPE2", "ASFPE3"]
                 }
             ]
         },
@@ -66,23 +80,21 @@
             "options": [
                 {
                     "name": "End Condition",
-                    "id": "TFPEC",
-                    "disable": ["TFPOB", "TFPE2", "TFPE3"]
+                    "id": "TFPEC"
                 },
                 {
                     "name": "Opt. Bay",
-                    "id": "TFPOB",
-                    "disable": ["TFPEC", "TFPE2", "TFPE3"]
+                    "id": "TFPOB"
                 },
                 {
                     "name": "Elevation #2",
                     "id": "TFPE2",
-                    "disable": ["TFPEC", "TFPOB", "TFPE3"]
+                    "disable": ["TFPE3"]
                 },
                 {
                     "name": "Elevation #3",
                     "id": "TFPE3",
-                    "disable": ["TFPEC", "TFPOB", "TFPE2"]
+                    "disable": ["TFPE2"]
                 }
             ]
         },
