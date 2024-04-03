@@ -45,22 +45,26 @@ const enableOption = ({ target, checked = target.getAttribute('aria-checked') !=
     };
     const enableRequired = id => {
         const $ref = $floorBody.querySelector(`[data-id="${id}"]`);
-        $ref.getAttribute('aria-checked') !== 'true' && enableOption({ target: $ref });
+        if ($ref.getAttribute('aria-checked') !== 'true') {
+            $ref.setAttribute('aria-checked', true);
+            insertAt(id)
+        }
     };
     selectFloor({ target: document.querySelector(`[data-ref="${parentId}"]`) }, true);
     const $parent = document.getElementById(parentId);
-    const insertAt = () => {
+    const insertAt = (id) => {
         const $g = $pristine.querySelector(`#${id}`).cloneNode(true);
         const idx = $g.getAttribute('idx');
         const getNodeAfter = $n => idx < $n.getAttribute('idx');
         Array.from($parent.children).find(getNodeAfter).insertAdjacentElement('beforebegin', $g);
     };
     const uncheckRequired = ($checkedOption) => {
-        if (floorMap[$checkedOption.dataset.id].required?.includes(target.dataset.id)) {
+        if ($checkedOption.dataset.id !== id && floorMap[$checkedOption.dataset.id].required?.includes(id)) {
             $checkedOption.setAttribute('aria-checked', false);
+            deleteElement($checkedOption.dataset.id);
         }
     };
-    checked ? insertAt() : deleteElement(id);
+    checked ? insertAt(id) : deleteElement(id);
     target.setAttribute('aria-checked', checked);
     disable.forEach(toggleOthers);
     required.forEach(enableRequired);
@@ -84,6 +88,7 @@ const enableOption = ({ target, checked = target.getAttribute('aria-checked') !=
             $ref.requiredCount = Math.max($ref.requiredCount - count, 0);
             $ref.disabled = $ref.requiredCount;
             if ($ref.disabled) {
+                $ref.requiredCount = required.length;
                 $ref.setAttribute('aria-checked', false);
             }
         }
