@@ -50,12 +50,11 @@
                 {
                     "name": "End Condition",
                     "id": "ASFPEC",
-                    "disable": ["ASFPOD"]
+                    "disable": ["ASFPE4"]
                 },
                 {
                     "name": "Opt. Deck",
-                    "id": "ASFPOD",
-                    "disable": ["ASFPEC"]
+                    "id": "ASFPOD"
                 },
                 {
                     "name": "Elevation #2",
@@ -70,7 +69,7 @@
                 {
                     "name": "Elevation #4",
                     "id": "ASFPE4",
-                    "disable": ["ASFPE2", "ASFPE3"]
+                    "disable": ["ASFPE2", "ASFPE3", "ASFPEC"]
                 }
             ]
         },
