@@ -104,11 +104,7 @@
                 {
                     "name": "End Condition",
                     "id": "LFPEC"
-                },
-                {
-                    "name": "Opt. Deck",
-                    "id": "LFPOD"
-                } 
+                }
             ]
         }
     ]
