@@ -23,8 +23,16 @@
                     "required": ["SFPEC"]
                 },
                 {
+                    "name": "Opt. Island",
+                    "id": "SFPOI"
+                },
+                {
                     "name": "Opt. Deck",
                     "id": "SFPOD"
+                },
+                {
+                    "name": "Opt. 6 pc rear",
+                    "id": "SFPO6PCR"
                 },
                 {
                     "name": "Elevation #2",
@@ -70,6 +78,10 @@
                     "name": "Elevation #4",
                     "id": "ASFPE4",
                     "disable": ["ASFPE2", "ASFPE3", "ASFPEC"]
+                },
+                {
+                    "name": "Opt. 6 pc middle",
+                    "id": "ASFPO6PCM"
                 }
             ]
         },
