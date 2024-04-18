@@ -31,10 +31,6 @@
                     "id": "SFPOD"
                 },
                 {
-                    "name": "Opt. Designer 6 pc Kitchen Middle",
-                    "id": "ASFPO6PCM"
-                },
-                {
                     "name": "Opt. Designer 6 pc Kitchen Rear",
                     "id": "SFPO6PCR"
                 },
@@ -70,11 +66,7 @@
                 },
                 {
                     "name": "Opt. Designer 6 pc Kitchen Middle",
-                    "id": "ASFPO6PCM"
-                },
-                {
-                    "name": "Opt. Designer 6 pc Kitchen Rear",
-                    "id": "SFPO6PCR"
+                    "id": "ASFPO6PCM1"
                 },
                 {
                     "name": "Elevation #2",
