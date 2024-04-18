@@ -23,16 +23,16 @@
                     "required": ["SFPEC"]
                 },
                 {
-                    "name": "Opt. Island",
-                    "id": "SFPOI"
-                },
-                {
                     "name": "Opt. Deck",
                     "id": "SFPOD"
                 },
                 {
                     "name": "Opt. Designer 6 pc Kitchen Rear",
                     "id": "SFPO6PCR"
+                },
+                {
+                    "name": "Opt. Island",
+                    "id": "SFPOI"
                 },
                 {
                     "name": "Elevation #2",
