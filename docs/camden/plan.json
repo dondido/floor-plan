@@ -5,11 +5,11 @@
     "zoomRatio": "100",
     "floors": [
         {
-            "name": "GROUND FLOOR",
+            "name": "Entry Level",
             "id": "GFP"
         },
         {
-            "name": "2ND FLOOR",
+            "name": "Main Level",
             "id": "SFP",
             "options": [
                 {
@@ -52,7 +52,7 @@
             ]
         },
         {
-            "name": "Alt. 2ND FLOOR",
+            "name": "Alt. Main Level",
             "id": "ASFP",
             "options": [
                 {
@@ -86,7 +86,7 @@
             ]
         },
         {
-            "name": "3RD FLOOR",
+            "name": "3rd Floor",
             "id": "TFP",
             "options": [
                 {
@@ -110,7 +110,7 @@
             ]
         },
         {
-            "name": "LOFT",
+            "name": "4th Floor",
             "id": "LFP",
             "options": [
                 {
