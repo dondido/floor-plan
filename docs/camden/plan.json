@@ -24,17 +24,17 @@
                 },
                 {
                     "name": "Opt. Deck",
-                    "id": "SFPOD",
-                    "disable": ["SFPO6PCR"]
+                    "id": "SFPOD"
                 },
                 {
                     "name": "Opt. Designer 6 pc Kitchen Rear",
                     "id": "SFPO6PCR",
-                    "disable": ["SFPOD"]
+                    "disable": ["SFPOI"]
                 },
                 {
                     "name": "Opt. Island",
-                    "id": "SFPOI"
+                    "id": "SFPOI",
+                    "disable": ["SFPO6PCR"]
                 },
                 {
                     "name": "Opt. Elec. Fireplace",
