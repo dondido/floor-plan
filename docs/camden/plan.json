@@ -24,15 +24,21 @@
                 },
                 {
                     "name": "Opt. Deck",
-                    "id": "SFPOD"
+                    "id": "SFPOD",
+                    "disable": ["SFPO6PCR"]
                 },
                 {
                     "name": "Opt. Designer 6 pc Kitchen Rear",
-                    "id": "SFPO6PCR"
+                    "id": "SFPO6PCR",
+                    "disable": ["SFPOD"]
                 },
                 {
                     "name": "Opt. Island",
                     "id": "SFPOI"
+                },
+                {
+                    "name": "Opt. Elec. Fireplace",
+                    "id": "SFPOEF"
                 },
                 {
                     "name": "Elevation #2",
@@ -67,6 +73,10 @@
                 {
                     "name": "Opt. Designer 6 pc Kitchen Middle",
                     "id": "ASFPO6PCM"
+                },
+                {
+                    "name": "Opt. Elec. Fireplace",
+                    "id": "ASFPOEF"
                 },
                 {
                     "name": "Elevation #2",
@@ -116,6 +126,10 @@
                 {
                     "name": "End Condition",
                     "id": "LFPEC"
+                },
+                {
+                    "name": "Opt. Bath",
+                    "id": "LFPOB"
                 }
             ]
         }
