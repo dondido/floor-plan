@@ -61,6 +61,8 @@
     pointer-events: none;
     text-align: center;
     margin: -10px 0 10px;
+}
+.floor-item-summary span {
     color: #fff;
 }
 .floor-options-tab:after,
@@ -105,6 +107,13 @@
     border-bottom: 1px solid #80858e;
     margin-bottom: 10px;
     padding: 4px 0 0;
+}
+.menu-single .floor-switcher-menu {
+    pointer-events: none;
+}
+.menu-single .floor-item-summary,
+.menu-single .floor-switcher-menu button {
+    pointer-events: all;
 }
 .floor-prev-button,
 .floor-option-button,

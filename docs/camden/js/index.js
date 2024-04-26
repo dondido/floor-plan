@@ -23,16 +23,16 @@ const resize = () => {
 const selectFloor = ({ target }, collapse) => {
     collapse || $floorSelector.classList.toggle('expand');
     if (target.classList.contains('selected') === false && target.isSameNode($floorSelector) === false) {
-        const id = `#${target.dataset.ref}`;
-        const $summary = document.querySelector(`[data-id=${target.dataset.ref}]`);
-        const $highlightSummary = document.querySelector('.highlight-summary');
+        const { ref } = target.dataset;
         $selectedFloorOption.classList.remove('selected');
         $selectedFloorOption = target;
         target.classList.add('selected');
         $dirty.appendChild($floor);
-        $floor = $dirty.querySelector(id) || $pristine.querySelector(id).cloneNode(true);
+        $floor = $dirty.getElementById(ref) || $pristine.getElementById(ref).cloneNode(true);
         $scene.appendChild($floor);
+        const $highlightSummary = document.querySelector('.highlight-summary');
         $highlightSummary && $highlightSummary.classList.remove('highlight-summary');
+        const $summary = document.querySelector(`[data-id=${ref}]`);
         $summary && $summary.classList.add('highlight-summary');
         restore();
     }
@@ -141,7 +141,6 @@ const setFloor = ({name, id, options}, i) => {
     const $g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
     const ref = `floor-${id}`;
     const hideViewOptions = (option, ii) => {
-        console.log(1111, option.id, id)
         if (option.id === id) {
             return;
         }
@@ -183,6 +182,9 @@ const insertView = (text) => {
 const handlePlan = (raw) => {
     plan = raw;
     document.querySelector('.plan-name').textContent = plan.name;
+    if (plan.menu) {
+        document.body.classList.add(`menu-${plan.menu}`);
+    }
     fetch(plan.src)
         .then(handleText)
         .then(insertView);

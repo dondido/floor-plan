@@ -146,6 +146,9 @@ button {
     top: 100px;
     width: 177px;
 }
+.menu-single .floor-selector {
+    display: none;
+}
 .furniture-selector {
     left: auto;
     top: 76px;
@@ -386,7 +389,7 @@ button {
     padding: 0 25px;
     overflow: hidden;
     z-index: 1;
-    height: 48px;
+    height: 56px;
     border-bottom: 1px #808080 solid;
     width: 100%;
     display: flex;

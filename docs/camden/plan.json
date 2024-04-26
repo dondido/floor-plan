@@ -3,6 +3,7 @@
     "src": "floors/brambleton.svg",
     "footRatio": "9",
     "zoomRatio": "100",
+    "menu": "single",
     "floors": [
         {
             "name": "Entry Level",

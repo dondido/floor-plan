@@ -215,10 +215,8 @@
     color: #80858e;
     cursor: pointer;
 }
-.floor-item-summary:before {
-    content: url(../images/chevron.svg);
-    margin: 0 8px;
-    filter: invert(78%) sepia(56%) saturate(5832%) hue-rotate(343deg) brightness(94%) contrast(98%);
+.floor-item-summary span {
+    color: inherit;
 }
 [open] .floor-item-summary:before {
     transform: rotate(90deg);
@@ -230,6 +228,11 @@
     margin: 16px 12px;
     border-bottom: 1px solid #aeb3b9;
     padding: 0 0 16px;
+}
+.floor-item-details:has(.floor-item-body) .floor-item-summary:before {
+    content: url(../images/chevron.svg);
+    margin: 0 8px;
+    filter: invert(78%) sepia(56%) saturate(5832%) hue-rotate(343deg) brightness(94%) contrast(98%);
 }
 .floor-option-item {
     display: flex;

@@ -40,7 +40,7 @@ const enableOption = ({ target, checked = target.getAttribute('aria-checked') !=
     const { disable = [], required = [], parentId } = floorMap[id];
     const { $pristine, selectFloor, mirror } = inject();
     const toggleOthers = (ref) => {
-        $floorBody.querySelector(`[data-id="${ref}"]`)?.setAttribute('aria-checked', false);
+        $floorBody.querySelector(`[data-id="${ref}"]`).setAttribute('aria-checked', false);
         deleteElement(ref);
     };
     const enableRequired = id => {
@@ -102,14 +102,17 @@ const setButtonRequiredCount = ($button, count) => {
     $button.disabled = count;
     $button.requiredCount = count;
 };
-const setFloor = (floor, idx) => {
-    const {name, id, options} = floor;
-    if (options === undefined) {
+const setFloor = function(floor, idx) {
+    const {name, id, options = []} = floor;
+    if (options.length === 0 && this.menu === undefined) {
         return;
     }
     const $floor = $floors.cloneNode(true);
     floorNodes.push($floor);
     const $floorBody = $floor.querySelector('.floor-item-body');
+    if (options.length === 0 && this.menu) {
+        $floorBody.remove();
+    }
     const $summary = $floor.querySelector('.floor-item-summary');
     const setOption = ({ name, id, disable = [], required = [] }) => {
         const $floorOption = $floorOptionItem.cloneNode(true);
@@ -145,9 +148,21 @@ const setFloor = (floor, idx) => {
         }
         setButtonRequiredCount($button, required.length);
     };
-    Object.assign(floorMap, options.reduce(mapNameToId.bind({ id }), { [id]: floor }));
-    $summary.textContent = name;
+    Object.assign(floorMap, options?.reduce(mapNameToId.bind({ id }), { [id]: floor }));
+    $summary.firstElementChild.textContent = name;
     $summary.dataset.id = `floor-${id}`;
+    const { selectFloor } = inject();
+    if (this.menu) {
+        $summary.onclick = (event) => {
+            const { target, currentTarget } = event;
+            if (target !== currentTarget) {
+                event.preventDefault();
+                if (currentTarget.classList.contains('highlight-summary') === false) {
+                    selectFloor({ target: document.querySelector(`[data-ref="${currentTarget.dataset.id}"]`) }, true);
+                }
+            }
+        };
+    }
     idx === 0 && $summary.classList.add('highlight-summary');
     options.forEach(setOption);
     $floorList.appendChild($floor);
@@ -160,7 +175,7 @@ const uncheckButton = $button => {
     $button.setAttribute('aria-checked', false);
     setButtonRequiredCount($button, required.length);
 };
-const setFloorOptions = ({ floors }) => {
+const setFloorOptions = ({ floors, menu }) => {
     const { $pristine, $dirty } = inject();
     const mopFloor = ({ id }) => {
         const floorId = `#floor-${id}`;
@@ -170,7 +185,7 @@ const setFloorOptions = ({ floors }) => {
             $floor.prepend($pristine.querySelector(`#${id}`).cloneNode(true));
         }
     }
-    floors.forEach(setFloor);
+    floors.forEach(setFloor, { menu });
     floorNodes[0].classList.add('current-floor');
     document.querySelector('.floor-reset-button').onclick = () => {
         floors.forEach(mopFloor);
